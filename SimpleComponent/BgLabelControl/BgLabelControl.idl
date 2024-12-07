@@ -1,0 +1,11 @@
+// BgLabelControl.idl
+namespace SimpleComponent
+{
+    //CAUTION: Be sure to use the proper namespaces, i.e. WinUI is Microsoft.UI.Xaml...
+    runtimeclass BgLabelControl : Microsoft.UI.Xaml.Controls.Control
+    {
+        BgLabelControl();
+        static Microsoft.UI.Xaml.DependencyProperty LabelProperty{ get; };
+        String Label;
+    }
+}

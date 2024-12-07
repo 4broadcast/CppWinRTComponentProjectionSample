@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
+	<metadata>
+		<id>SimpleComponent</id>
+		<version>0.1.0-prerelease</version>
+		<authors>Contoso Inc.</authors>
+		<description>A simple component with a math class and a Xaml control</description>
+		<dependencies>
+			<group targetFramework="net8.0-windows10.0.19041.0" />
+		</dependencies>
+	</metadata>
+	<files>
+
+		<!--Architecture-neutral assemblies-->
+		<file src="..\..\_build\AnyCPU\Release\SimpleProjection\bin\SimpleProjection.dll" target="lib\net8.0-windows10.0.19041.0\SimpleProjection.dll" />
+		
+		<!--Architecture-specific implementation DLLs should be copied into RID-relative folders-->
+		<!--CAUTION: Be sure to use the updated RID's, win-x64 rather than win10-x64, if appropriate -->
+		<file src="..\..\_build\x64\Release\SimpleComponent\bin\SimpleComponent.dll" target="runtimes\win-x64\native\" />
+		<!--NB: the .pri file contains the embedded binary of Generic.xaml -->
+		<file src="..\..\_build\x64\Release\SimpleComponent\bin\SimpleComponent.pri" target="runtimes\win-x64\native\" />
+		
+		<!--To support x86 and Arm64, build SimpleComponent for those other architectures and uncomment the entries below.-->
+		<!--<file src="..\..\_build\Win32\Release\SimpleComponent\bin\SimpleComponent\SimpleComponent.dll" target="runtimes\win10-x86\native\" />-->
+		<!--<file src="..\..\_build\arm64\Release\SimpleComponent\bin\SimpleComponent\SimpleComponent.dll" target="runtimes\win10-arm64\native\" />-->
+	</files>
+</package>
